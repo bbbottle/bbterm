@@ -1,2 +1,4 @@
-import { startTerm } from "../src";
-startTerm();
+import { startShell } from "../src";
+startShell(document.getElementById("term-wrapper")).then(() => {
+  console.log("Shell is running...");
+});
