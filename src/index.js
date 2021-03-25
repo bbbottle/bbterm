@@ -3,7 +3,7 @@ import { FitAddon } from "@bbbottle/xterm/dist/es6/addons/FitAddon";
 import { Shell } from "./shell";
 import { xtermConfig } from "./config";
 
-import './style/index.scss';
+import './style/index.module.scss';
 
 const initTerm = ($dom) => {
   const terminal = new Terminal(xtermConfig);
