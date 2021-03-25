@@ -5,9 +5,15 @@
   "main": "dist/index.js",
   "author": "bbbottle",
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "public"
+  },
+  "repository": "https://github.com/bbbottle/bbterm.git",
   "scripts": {
     "start": "vite serve example",
-    "build": "bbbundle"
+    "build": "bbbundle",
+    "prepare": "bbbundle"
   },
   "dependencies": {
     "@bbbottle/bbbundle": "^0.1.2",
