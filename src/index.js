@@ -1,18 +1,45 @@
-import { Terminal } from 'xterm';
-import { FitAddon } from 'xterm-addon-fit'
-import XtermJSShell from "xterm-js-shell";
+import { Terminal } from "xterm";
+import { FitAddon } from "xterm-addon-fit";
+import { Shell } from "./shell";
+import { xtermConfig } from "./config";
 
-export const startTerm = () => {
-  const terminal = new Terminal();
+import "xterm/css/xterm.css";
+import "./style/xterm_style_reset.css";
+
+const initTerm = ($dom) => {
+  const terminal = new Terminal(xtermConfig);
   const fitAddon = new FitAddon();
   terminal.loadAddon(fitAddon);
+  terminal.open($dom);
   fitAddon.fit();
 
-  const shell = new XtermJSShell(terminal);
-  shell.command('hello', async (shell) => {
-    shell.printLine('Hello world');
-  })
-  shell.repl();
+  return terminal;
+};
 
-  terminal.open(document.getElementById('term-wrapper'));
-}
+export const startShell = async ($dom) => {
+  const shell = new Shell(initTerm($dom));
+  shell
+    .command(
+      "hello",
+      async (shell) => {
+        await shell.printLine("Hello world");
+      },
+      true
+    )
+    .command(
+      "help",
+      async () => {
+        await shell.printHelpInfo();
+      },
+      true
+    )
+    .command(
+      "clear",
+      async () => {
+        await shell.clear();
+      },
+      true
+    );
+  await shell.repl();
+  return shell;
+};
