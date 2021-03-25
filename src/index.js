@@ -1,10 +1,9 @@
-import { Terminal } from "xterm";
-import { FitAddon } from "xterm-addon-fit";
+import { Terminal } from "@bbbottle/xterm/dist/es6/xterm";
+import { FitAddon } from "@bbbottle/xterm/dist/es6/addons/FitAddon";
 import { Shell } from "./shell";
 import { xtermConfig } from "./config";
 
-import "xterm/css/xterm.css";
-import "./style/xterm_style_reset.css";
+import './style/index.scss';
 
 const initTerm = ($dom) => {
   const terminal = new Terminal(xtermConfig);
