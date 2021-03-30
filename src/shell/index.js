@@ -1,4 +1,5 @@
 import XtermJSShell from "@bbbottle/xterm-js-shell";
+import {BUILT_IN_COMMANDS} from "./commands";
 
 const buildHelpInfo = (commandsMap) => {
   const cmdListStr = Array.from(commandsMap.keys())
@@ -12,8 +13,13 @@ export class Shell extends XtermJSShell {
   constructor(props) {
     super(props);
     this.prompt = async () => "🍼  ";
+    this.addBuiltInCommands();
+  }
 
-    this.printHelpInfo = this.printHelpInfo.bind(this);
+  addBuiltInCommands () {
+    BUILT_IN_COMMANDS.forEach(({ name, handler }) => {
+      this.command(name, handler, true);
+    })
   }
 
   async printHelpInfo() {

@@ -17,28 +17,6 @@ const initTerm = ($dom) => {
 
 export const startShell = async ($dom) => {
   const shell = new Shell(initTerm($dom));
-  shell
-    .command(
-      "hello",
-      async (shell) => {
-        await shell.printLine("Hello world");
-      },
-      true
-    )
-    .command(
-      "help",
-      async () => {
-        await shell.printHelpInfo();
-      },
-      true
-    )
-    .command(
-      "clear",
-      async () => {
-        await shell.clear();
-      },
-      true
-    );
   await shell.repl();
   return shell;
 };
