@@ -10,6 +10,7 @@ const initTerm = ($dom) => {
   const fitAddon = new FitAddon();
   terminal.loadAddon(fitAddon);
   terminal.open($dom);
+  terminal.focus();
   fitAddon.fit();
 
   return terminal;
