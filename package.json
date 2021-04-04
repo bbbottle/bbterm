@@ -1,6 +1,6 @@
 {
   "name": "@bbbottle/bbterm",
-  "version": "0.2.4",
+  "version": "0.2.8",
   "description": "terminal for web",
   "main": "dist/index.js",
   "author": "bbbottle",
@@ -16,9 +16,9 @@
     "prepare": "bbbundle"
   },
   "dependencies": {
-    "@bbbottle/bbbundle": "^0.1.9",
+    "@bbbottle/bbbundle": "^0.1.11",
     "@bbbottle/xterm": "4.12.0",
-    "@bbbottle/xterm-js-shell": "1.2.4"
+    "@bbbottle/xterm-js-shell": "1.2.7"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^5.3.0",
