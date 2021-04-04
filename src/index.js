@@ -3,7 +3,7 @@ import { FitAddon } from "@bbbottle/xterm/dist/es6/addons/FitAddon";
 import { Shell } from "./shell";
 import { xtermConfig } from "./config";
 
-import './style/index.module.scss';
+import "./style/index.module.scss";
 
 const initTerm = ($dom) => {
   const terminal = new Terminal(xtermConfig);
@@ -22,14 +22,13 @@ export const startShell = async ($dom, commands = []) => {
   // add commands
   commands.forEach((cmd = {}) => {
     const { name, handler, complete } = cmd;
-    if (typeof name !== 'string'
-      ||typeof handler !== 'function'
-    ) {
+    if (typeof name !== "string" || typeof handler !== "function") {
       return;
     }
     shell.command(name, handler, !!complete);
-  })
+  });
 
   // start repl
   await shell.repl();
+  return shell;
 };
