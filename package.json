@@ -1,6 +1,6 @@
 {
   "name": "@bbbottle/bbterm",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "terminal for web",
   "main": "dist/index.js",
   "author": "bbbottle",
