@@ -59,7 +59,11 @@ export const startShell = async ($dom, commands = [], options = {}) => {
   const shell = new Shell(tml);
   const { onBeforeRepl = () => null } = options;
 
-  // add commands
+  const clear = () => {
+    tml.clear();
+  };
+
+  // add user commands
   commands.forEach((cmd = {}) => {
     const { name, handler, complete } = cmd;
     if (typeof name !== "string" || typeof handler !== "function") {
@@ -67,6 +71,17 @@ export const startShell = async ($dom, commands = [], options = {}) => {
     }
     shell.command(name, handler, !!complete);
   });
+
+  // add special clear command
+  shell.command(
+    "clear",
+    async () => {
+      clear();
+      // clear 'clear prompt';
+      setTimeout(clear, 0);
+    },
+    true
+  );
 
   onBeforeRepl(shell, tml);
 

@@ -878,7 +878,7 @@
     "@babel/plugin-transform-react-jsx-development" "^7.12.12"
     "@babel/plugin-transform-react-pure-annotations" "^7.12.1"
 
-"@babel/runtime@^7.8.4":
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.8.4":
   version "7.13.10"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.13.10.tgz#47d42a57b6095f4468da440388fdbad8bebf0d7d"
   integrity sha512-4QPkjJq6Ns3V/RgpEahRk+AGfL0eO6RHHtTWoNNr5mO49G6B5+X6d6THgWEAvTrznU5xYpbAlVKRYcsCgh/Akw==
@@ -918,10 +918,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@bbbottle/bbbundle@^0.1.2":
-  version "0.1.2"
-  resolved "https://npm.pkg.github.com/download/@bbbottle/bbbundle/0.1.2/9d672f25d439f20ecc3e343ed33180a6a445aa3e179140ef5815bedfe3369875#ace5d43d6e728e9ca4a324af554d83171b680b08"
-  integrity sha512-xTQFxE3e9f5NelXb80elZEcNjH8YPlUix8zncmQONdOt4R3QhubJ2Wxt9Rw9HlT8jI0qAUwuS1LcN6qdh2KVSQ==
+"@bbbottle/bbbundle@^0.1.26":
+  version "0.1.27"
+  resolved "https://npm.pkg.github.com/download/@bbbottle/bbbundle/0.1.27/94f75665c7dc0d428e3f3419ee6f9c682fb97c9e19caa389816eac56af3de675#4485da8ba0ce613e8b53926925d7aefe1452e3b1"
+  integrity sha512-L/GS5Df9lLk8wi5CPTgo+rQYxpVh9XdmKrmkP89gTYHdG6edodbS6m/e4szHQ5CUphg+6V/gfcbz63lWBV8ZLg==
   dependencies:
     "@babel/core" "^7.12.3"
     "@babel/plugin-proposal-class-properties" "^7.12.1"
@@ -929,6 +929,8 @@
     "@babel/plugin-transform-runtime" "^7.13.10"
     "@babel/preset-env" "^7.12.1"
     "@babel/preset-react" "^7.12.5"
+    "@babel/runtime" "^7.1.2"
+    "@rollup/plugin-babel" "^5.3.0"
     "@rollup/plugin-json" "^4.1.0"
     "@svgr/rollup" "^5.5.0"
     commander "^6.2.0"
@@ -941,10 +943,10 @@
     rollup-plugin-postcss "^3.1.8"
     rollup-plugin-terser "^7.0.2"
 
-"@bbbottle/xterm-js-shell@1.2.0":
-  version "1.2.0"
-  resolved "https://npm.pkg.github.com/download/@bbbottle/xterm-js-shell/1.2.0/dd0f7f54b3c5fac06fa88bb48cb1c522212fc79b9271963a0ba2e1b403abb3e2#517710b9f137121d37089905d2e5688b7638b802"
-  integrity sha512-4plOagO5f5a42l5jwpaLKFpqCrRTjqCRNBaZvThzr7Qxe7P1GpNbz597Cd1yPE0irxxvN3EAEIDtBItDnHf1lA==
+"@bbbottle/xterm-js-shell@1.1.15":
+  version "1.1.15"
+  resolved "https://npm.pkg.github.com/download/@bbbottle/xterm-js-shell/1.1.15/bdb8969ac6ff3a7098879a05408f30b6baad7357d93aff2936e9e44b7c755190#740b396a23d329dd4a9bb880ea0dd7b7dd9c8b4e"
+  integrity sha512-JEP6tQ7YPY9MzxDiC/tfKF7WytSpvcMBPzerV2WKuLfrRXefQIn02KeIuO23xxaZmNLb+knVZLrlzn0Ffe9zqQ==
   dependencies:
     "@fikrikarim/local-echo" "^0.4.1"
     ansi-styles "^3.2.1"
