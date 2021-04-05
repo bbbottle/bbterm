@@ -6,7 +6,7 @@ const buildHelpInfo = (commandsMap) => {
     .map((command) => ` - ${command}`)
     .join("\n");
 
-  return `\nTry running one of these commands:\n${cmdListStr}\n\n`;
+  return `Try running one of these commands:\n${cmdListStr}\n`;
 };
 
 export class Shell extends XtermJSShell {
@@ -24,6 +24,7 @@ export class Shell extends XtermJSShell {
 
   async printHelpInfo() {
     await this.printLine(buildHelpInfo(this.commands));
+    await this.printLine("");
   }
 
   async run(command, args, flags) {
@@ -34,6 +35,7 @@ export class Shell extends XtermJSShell {
       await super.run(command, args, flags);
     } catch (e) {
       await this.printLine(e.message);
+      await this.printLine("");
       await this.printHelpInfo();
     }
   }
