@@ -12,6 +12,7 @@
   "repository": "https://github.com/bbbottle/bbterm.git",
   "scripts": {
     "start": "vite serve example",
+    "dev": "bbbundle dev",
     "build": "bbbundle",
     "prepare": "bbbundle"
   },

@@ -16,8 +16,10 @@ const initTerm = ($dom) => {
   return terminal;
 };
 
-export const startShell = async ($dom, commands = []) => {
-  const shell = new Shell(initTerm($dom));
+export const startShell = async ($dom, commands = [], options = {}) => {
+  const tml = initTerm($dom);
+  const shell = new Shell(tml);
+  const { onBeforeRepl = () => null } = options;
 
   // add commands
   commands.forEach((cmd = {}) => {
@@ -27,6 +29,8 @@ export const startShell = async ($dom, commands = []) => {
     }
     shell.command(name, handler, !!complete);
   });
+
+  onBeforeRepl(shell, tml);
 
   // start repl
   await shell.repl();

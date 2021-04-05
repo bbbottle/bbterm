@@ -1,12 +1,12 @@
 import XtermJSShell from "@bbbottle/xterm-js-shell";
-import {BUILT_IN_COMMANDS} from "./commands";
+import { BUILT_IN_COMMANDS } from "./commands";
 
 const buildHelpInfo = (commandsMap) => {
   const cmdListStr = Array.from(commandsMap.keys())
     .map((command) => ` - ${command}`)
     .join("\n");
 
-  return `\nTry running one of these commands:\n${cmdListStr}\n`;
+  return `\nTry running one of these commands:\n${cmdListStr}\n\n`;
 };
 
 export class Shell extends XtermJSShell {
@@ -16,10 +16,10 @@ export class Shell extends XtermJSShell {
     this.addBuiltInCommands();
   }
 
-  addBuiltInCommands () {
+  addBuiltInCommands() {
     BUILT_IN_COMMANDS.forEach(({ name, handler }) => {
       this.command(name, handler, true);
-    })
+    });
   }
 
   async printHelpInfo() {
@@ -35,7 +35,6 @@ export class Shell extends XtermJSShell {
     } catch (e) {
       await this.printLine(e.message);
       await this.printHelpInfo();
-      await this.printLine("\n");
     }
   }
 
