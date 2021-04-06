@@ -87,5 +87,4 @@ export const startShell = async ($dom, commands = [], options = {}) => {
 
   // start repl
   await shell.repl();
-  return shell;
 };
