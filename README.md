@@ -18,9 +18,7 @@ startShell($wrapper);
 
 ## API
 
-### startShell
-
-**Type Signature**
+**startShell**
 ```javascript
 function startShell(
   $dom: HTMLElement,
