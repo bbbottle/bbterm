@@ -24,5 +24,5 @@ function startShell(
   wrapper: HTMLElement,
   commands?: Command[],
   options?: Options
-)
+): Promise<void>
 ```
