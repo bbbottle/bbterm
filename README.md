@@ -21,7 +21,7 @@ startShell($wrapper);
 **startShell**
 ```javascript
 function startShell(
-  $dom: HTMLElement,
+  wrapper: HTMLElement,
   commands?: Command[],
   options?: Options
 )
