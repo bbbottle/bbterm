@@ -18,8 +18,13 @@ startShell($wrapper);
 
 ## API
 
-**startShell**
+### startShell
 
+**Type Signature**
 ```javascript
-startShell($dom, commands, options)
+function startShell(
+  $dom: HTMLElement,
+  commands?: Command[],
+  options?: Options
+)
 ```
