@@ -1,8 +1,8 @@
-import chalk from "chalk";
+import "./process_polyfill";
+import chalk from "ansi-colors";
+
 import XtermJSShell from "@bbbottle/xterm-js-shell";
 import { BUILT_IN_COMMANDS } from "./commands";
-
-const CHALK_OPTIONS = { enabled: true, level: 2 };
 
 const buildHelpInfo = (commandsMap) => {
   const cmdListStr = Array.from(commandsMap.keys())
@@ -15,8 +15,7 @@ const buildHelpInfo = (commandsMap) => {
 export class Shell extends XtermJSShell {
   constructor(props) {
     super(props);
-    this.chalk = new chalk.Instance(CHALK_OPTIONS);
-    this.chalk.enabled = true;
+    this.chalk = chalk;
     this.prompt = async () => "🍼  ";
     this.addBuiltInCommands();
   }
