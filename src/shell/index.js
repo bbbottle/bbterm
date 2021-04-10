@@ -16,6 +16,7 @@ export class Shell extends XtermJSShell {
   constructor(props) {
     super(props);
     this.chalk = new chalk.Instance(CHALK_OPTIONS);
+    this.chalk.enabled = true;
     this.prompt = async () => "🍼  ";
     this.addBuiltInCommands();
   }
