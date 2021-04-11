@@ -4,6 +4,7 @@ import { FitAddon } from "@bbbottle/xterm/dist/es6/addons/FitAddon";
 export class BBTerminal extends Terminal {
   constructor(config) {
     super(config);
+    this._config = config;
     this.fitAddon = new FitAddon();
     this.loadAddon(this.fitAddon);
   }
@@ -33,7 +34,9 @@ export class BBTerminal extends Terminal {
     $terminalWrapper.style.paddingLeft = "10px";
     $terminalWrapper.style.paddingRight = "10px";
     $terminalWrapper.style.boxSizing = "border-box";
-    $terminalWrapper.style.background = "#000";
+    $terminalWrapper.style.background = this._config.theme
+      ? this._config.theme.background || "#000"
+      : "#000";
 
     return $terminalWrapper;
   }
