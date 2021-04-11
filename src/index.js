@@ -1,11 +1,18 @@
 import { Shell } from "./shell";
-import { xtermConfig } from "./config";
+import { xtermConfig as baseConfig } from "./config";
 import { BBTerminal } from "./terminal";
 
 import "./style/index.module.scss";
 
-export const startShell = async ($dom, commands = [], options = {}) => {
-  const tml = new BBTerminal(xtermConfig);
+export const startShell = async (
+  $dom,
+  commands = [],
+  options = { xtermConfig: {} }
+) => {
+  const tml = new BBTerminal({
+    ...baseConfig,
+    ...options.xtermConfig,
+  });
   const shell = new Shell(tml);
   const { onBeforeRepl = () => null } = options;
 
