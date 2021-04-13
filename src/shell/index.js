@@ -40,7 +40,9 @@ export class Shell extends XtermJSShell {
     } catch (e) {
       await this.printLine(this.chalk.red(e.message));
       await this.printLine("");
-      await this.printHelpInfo();
+      if (e instanceof TypeError) {
+        await this.printHelpInfo();
+      }
     }
   }
 
