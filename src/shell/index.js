@@ -4,9 +4,9 @@ import chalk from "ansi-colors";
 import XtermJSShell from "@bbbottle/xterm-js-shell";
 import { BUILT_IN_COMMANDS } from "./commands";
 
-const buildHelpInfo = (commandsMap) => {
+const buildHelpInfo = (commandsMap, g) => {
   const cmdListStr = Array.from(commandsMap.keys())
-    .map((command) => ` - ${command}`)
+    .map((command) => ` - ${g(command)}`)
     .join("\n");
 
   return `Try running one of these commands:\n${cmdListStr}\n`;
@@ -27,7 +27,7 @@ export class Shell extends XtermJSShell {
   }
 
   async printHelpInfo() {
-    await this.printLine(buildHelpInfo(this.commands));
+    await this.printLine(buildHelpInfo(this.commands, this.chalk.green));
     await this.printLine("");
   }
 
